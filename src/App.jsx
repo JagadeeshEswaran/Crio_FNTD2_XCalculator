@@ -82,7 +82,11 @@ function App() {
 		}
 
 		if (item.value === "=") {
-			return setResult(eval(inputStr));
+			if (inputStr === "") {
+				return setResult("Error");
+			}
+
+			return setResult(String(eval(inputStr)));
 		}
 
 		if (typeof parseInt(inputVal) === "number") {
